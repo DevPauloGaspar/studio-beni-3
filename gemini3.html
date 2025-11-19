@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Béni | Arquitetura da sua história</title>
+    
+    <link rel="icon" type="image/png" href="seu-favicon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    },
+                    colors: {
+                        'beni-dark': '#1a1a1a',
+                        'beni-gray': '#8c8c8c',
+                        'beni-beige': '#f0efe9',
+                        'beni-accent': '#a69b8f',
+                        'whatsapp': '#25D366',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        .zoom-img { transition: transform 0.7s ease; }
+        .group:hover .zoom-img { transform: scale(1.05); }
+        
+        @keyframes pulse-soft {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .whatsapp-pulse {
+            animation: pulse-soft 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-beni-beige text-beni-dark font-light antialiased selection:bg-beni-accent selection:text-white relative">
+
+    <nav class="fixed w-full z-50 bg-beni-beige/90 backdrop-blur-sm transition-all py-6 px-8 flex justify-between items-center border-b border-gray-200/50">
+        
+        <a href="#" class="block">
+            <img src="sua-logo.png" 
+                 alt="Studio Béni" 
+                 class="h-12 w-auto object-contain"
+                 onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'text-2xl tracking-[0.2em] uppercase font-normal\'>Studio <span class=\'font-bold\'>Béni</span></span>'"> 
+        </a>
+
+        <div class="hidden md:flex space-x-12 text-sm tracking-widest uppercase font-medium text-gray-600">
+            <a href="#sobre" class="hover:text-black transition-colors">O Escritório</a>
+            <a href="#projetos" class="hover:text-black transition-colors">Portfólio</a>
+            <a href="#depoimentos" class="hover:text-black transition-colors">Depoimentos</a>
+        </div>
+        <a href="#contato" class="hidden md:inline-block border border-black px-6 py-2 text-xs tracking-widest uppercase hover:bg-black hover:text-white transition-all">
+            Orçamento
+        </a>
+    </nav>
+
+    <header class="relative h-screen w-full overflow-hidden flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" 
+                 alt="Casa moderna brasileira" 
+                 class="w-full h-full object-cover brightness-[0.65]">
+        </div>
+
+        <div class="relative z-10 text-center text-white px-4">
+            <h2 class="text-xs md:text-sm tracking-[0.4em] uppercase mb-6 opacity-90">Brasília - DF</h2>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-thin tracking-wide mb-6">
+                Arquitetura da<br>sua <span class="font-serif italic font-light text-6xl md:text-8xl lg:text-9xl -ml-2 opacity-90">história</span>
+            </h1>
+            
+            <p class="text-sm md:text-base font-light tracking-wider max-w-xl mx-auto opacity-90 leading-relaxed mt-8">
+                Criamos espaços que contam histórias, harmonizando estética e funcionalidade para transformar sua visão em realidade.
+            </p>
+        </div>
+    </header>
+
+    <section id="sobre" class="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <h3 class="text-3xl md:text-4xl font-thin leading-tight">
+                    Não existem projetos pequenos.<br>
+                    Existem <span class="font-serif italic text-4xl text-beni-accent">sonhos</span>.
+                </h3>
+                <p class="text-gray-600 leading-loose font-light text-justify">
+                    O Studio Béni nasce do olhar sensível da arquiteta Emília Gaspar e de uma convicção: cada pessoa carrega uma história que merece ser traduzida em espaço. Para nós, arquitetura é um encontro entre vida e forma — um capítulo novo escrito com luz, textura e intenção.
+                </p>
+                <p class="text-gray-600 leading-loose font-light text-justify">
+                    Nosso processo começa pela escuta. Antes de qualquer traço, acolhemos a narrativa de quem chega: suas memórias, seus gestos, o modo como desejam habitar o mundo. É dessa escuta que surgem ambientes que revelam identidade e delicadeza, construídos com precisão, beleza e propósito.
+                </p>
+                <p class="text-gray-600 leading-loose font-light text-justify">
+                    Com mais de uma década de experiência, cultivamos uma arquitetura que se tece nos detalhes. Uma estética que não impõe, mas revela. Que não inventa histórias — as honra.
+                </p>
+                <p class="text-gray-600 leading-loose font-light text-justify">
+                    Studio Béni — arquitetura da sua história, criada para acolher quem você é e quem você ainda deseja ser.
+                </p>
+            </div>
+            <div class="relative h-[600px] bg-gray-200 overflow-hidden group">
+                <img src="sobre nós.jpeg" 
+                     class="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out"
+                     alt="Emília Gaspar, Arquiteta Studio Béni">
+            </div>
+        </div>
+    </section>
+
+    <section id="projetos" class="py-20 bg-white">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-16">
+                <h2 class="text-4xl font-thin tracking-wide text-beni-dark">Obras Recentes</h2>
+                <a href="#" class="text-xs tracking-[0.2em] uppercase border-b border-black pb-1 hover:text-beni-accent hover:border-beni-accent transition-all">Ver tudo</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 h-auto md:h-[800px]">
+                <div class="md:col-span-2 md:row-span-2 relative group overflow-hidden cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974&auto=format&fit=crop" 
+                         class="w-full h-full object-cover zoom-img" alt="Casa Noroeste">
+                    <div class="absolute bottom-0 left-0 p-8 bg-gradient-to-t from-black/70 to-transparent w-full">
+                        <p class="text-white text-xs tracking-[0.3em] uppercase mb-1">Noroeste</p>
+                        <h3 class="text-white text-2xl font-light">Residência Alvorada</h3>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden cursor-pointer">
+                    <img src="cozinha.jpg" 
+                         class="w-full h-full object-cover zoom-img" alt="Reforma Sala">
+                    <div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/60 to-transparent w-full">
+                        <p class="text-white text-xs tracking-[0.3em] uppercase mb-1">Asa Sul</p>
+                        <h3 class="text-white text-xl font-light"> Cozinha Apartamento 109</h3>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden cursor-pointer">
+                    <img src="casa vicente pires.png" 
+                         class="w-full h-full object-cover zoom-img" alt="Interiores Loft">
+                    <div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/60 to-transparent w-full">
+                        <p class="text-white text-xs tracking-[0.3em] uppercase mb-1">Vicente Pires</p>
+                        <h3 class="text-white text-xl font-light">Sala de Estar</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="py-24 bg-beni-beige border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-xs tracking-[0.3em] uppercase text-beni-accent block mb-2">Client Love</span>
+                <h2 class="text-3xl md:text-4xl font-thin text-beni-dark">O que dizem nossas <span class="font-serif italic">histórias</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-10 shadow-sm hover:shadow-md transition-shadow duration-300 border-t-2 border-transparent hover:border-beni-accent">
+                    <div class="text-beni-accent text-4xl font-serif mb-4">“</div>
+                    <p class="text-gray-600 font-light text-sm leading-loose mb-6">
+                        Achei que meu apartamento pequeno não tinha potencial. O Studio Béni provou o contrário. Transformaram 40m² em uma obra de arte funcional.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover grayscale" alt="Foto Cliente">
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-medium uppercase tracking-wider">Mariana Costa</h4>
+                            <p class="text-xs text-gray-400 font-light">Asa Norte</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-10 shadow-sm hover:shadow-md transition-shadow duration-300 border-t-2 border-transparent hover:border-beni-accent">
+                    <div class="text-beni-accent text-4xl font-serif mb-4">“</div>
+                    <p class="text-gray-600 font-light text-sm leading-loose mb-6">
+                        Construir nossa casa no Lago foi um sonho de vida. A sensibilidade da equipe em captar nossa história e traduzir em concreto foi emocionante.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop" class="w-full h-full object-cover grayscale" alt="Foto Cliente">
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-medium uppercase tracking-wider">Ricardo & Ana</h4>
+                            <p class="text-xs text-gray-400 font-light">Lago Sul</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-10 shadow-sm hover:shadow-md transition-shadow duration-300 border-t-2 border-transparent hover:border-beni-accent">
+                    <div class="text-beni-accent text-4xl font-serif mb-4">“</div>
+                    <p class="text-gray-600 font-light text-sm leading-loose mb-6">
+                        Elegância sem exageros. O escritório entendeu perfeitamente o conceito de 'menos é mais' que eu buscava para minha clínica.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop" class="w-full h-full object-cover grayscale" alt="Foto Cliente">
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-medium uppercase tracking-wider">Dra. Elena S.</h4>
+                            <p class="text-xs text-gray-400 font-light">Sudoeste</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato" class="bg-beni-dark text-beni-beige pt-24 pb-12 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
+            <div>
+                <h4 class="text-3xl tracking-[0.2em] uppercase mb-8 font-thin">Studio Béni</h4>
+                <p class="font-light text-gray-400 text-sm leading-relaxed max-w-xs">
+                    Transformando espaços em memórias. Arquitetura brasileira com alma.
+                </p>
+            </div>
+            <div>
+                <h5 class="text-xs font-bold tracking-[0.2em] uppercase mb-6 text-white">Contato</h5>
+                <ul class="space-y-4 font-light text-gray-300">
+                    <li>contato@studiobeni.com.br</li>
+                    <li>+55 (61) 99999-0000</li>
+                    <li class="pt-4">SHIS QI 05, Lago Sul - Brasília, DF</li>
+                </ul>
+            </div>
+            <div class="flex flex-col justify-between">
+                <div>
+                    <h5 class="text-xs font-bold tracking-[0.2em] uppercase mb-6 text-white">Social</h5>
+                    <div class="flex gap-6 text-gray-400">
+                        <a href="#" class="hover:text-white transition-colors">Instagram</a>
+                        <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-20 pt-8 text-center">
+            <p class="text-xs text-gray-600 tracking-wider">&copy; 2024 Studio Béni.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5561999990000" target="_blank" class="fixed bottom-6 right-6 z-50 group">
+        <div class="relative flex items-center justify-center">
+            <span class="absolute right-full mr-4 bg-white text-gray-800 text-xs font-medium px-3 py-1.5 rounded shadow-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none tracking-wide">
+                Conte sua história
+            </span>
+            
+            <div class="w-14 h-14 bg-whatsapp rounded-full flex items-center justify-center shadow-lg hover:bg-[#128C7E] transition-colors whatsapp-pulse">
+                <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+            </div>
+        </div>
+    </a>
+
+</body>
+</html>
