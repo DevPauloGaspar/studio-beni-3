@@ -46,6 +46,41 @@
         .whatsapp-pulse {
             animation: pulse-soft 2s infinite;
         }
+
+        /* --- ESTILOS DO CARROSSEL --- */
+        .carousel-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .carousel-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0; /* Invisível por padrão */
+            transition: opacity 2s ease-in-out; /* Transição suave de 2 segundos */
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .carousel-item.active {
+            opacity: 1; /* Visível quando tem a classe active */
+            z-index: 1;
+        }
+        
+        /* Filtro escuro para garantir leitura do texto sobre qualquer imagem */
+        .overlay-filter {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.35); /* Ajuste a opacidade aqui se precisar */
+            z-index: 2;
+        }
     </style>
 </head>
 <body class="bg-beni-beige text-beni-dark font-light antialiased selection:bg-beni-accent selection:text-white relative">
@@ -70,10 +105,25 @@
     </nav>
 
     <header class="relative h-screen w-full overflow-hidden flex items-center justify-center">
-        <div class="absolute inset-0 z-0">
+        
+        <div class="carousel-container">
             <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" 
                  alt="Casa moderna brasileira" 
-                 class="w-full h-full object-cover brightness-[0.65]">
+                 class="carousel-item active">
+            
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop" 
+                 alt="Interior Clean" 
+                 class="carousel-item">
+            
+            <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=2070&auto=format&fit=crop" 
+                 alt="Varanda Gourmet" 
+                 class="carousel-item">
+            
+            <img src="https://images.unsplash.com/photo-1600210491892-03d545097720?q=80&w=2070&auto=format&fit=crop" 
+                 alt="Fachada Minimalista" 
+                 class="carousel-item">
+                 
+            <div class="overlay-filter"></div>
         </div>
 
         <div class="relative z-10 text-center text-white px-4">
@@ -224,7 +274,7 @@
                 <h5 class="text-xs font-bold tracking-[0.2em] uppercase mb-6 text-white">Contato</h5>
                 <ul class="space-y-4 font-light text-gray-300">
                     <li>contato@studiobeni.com.br</li>
-                    <li>+55 (61) 99373-4733</li>
+                    <li>+55 (61) 99999-0000</li>
                     <li class="pt-4">SHIS QI 05, Lago Sul - Brasília, DF</li>
                 </ul>
             </div>
@@ -243,7 +293,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/5561993734733" target="_blank" class="fixed bottom-6 right-6 z-50 group">
+    <a href="https://wa.me/5561999990000" target="_blank" class="fixed bottom-6 right-6 z-50 group">
         <div class="relative flex items-center justify-center">
             <span class="absolute right-full mr-4 bg-white text-gray-800 text-xs font-medium px-3 py-1.5 rounded shadow-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none tracking-wide">
                 Conte sua história
@@ -256,6 +306,28 @@
             </div>
         </div>
     </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.carousel-item');
+            let currentIndex = 0;
+            const totalItems = items.length;
+
+            function cycleImages() {
+                // Remove a classe ativa da imagem atual
+                items[currentIndex].classList.remove('active');
+
+                // Calcula o índice da próxima imagem (volta para 0 se chegar ao fim)
+                currentIndex = (currentIndex + 1) % totalItems;
+
+                // Adiciona a classe ativa na próxima imagem
+                items[currentIndex].classList.add('active');
+            }
+
+            // Inicia a troca de imagens a cada 5000 milissegundos (5 segundos)
+            setInterval(cycleImages, 5000);
+        });
+    </script>
 
 </body>
 </html>
